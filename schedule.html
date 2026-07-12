@@ -206,6 +206,25 @@
     margin-bottom: 12px;
   }
 
+  .checkbox-row{
+    display:flex;
+    align-items:flex-start;
+    gap: 10px;
+    margin-top: 12px;
+    cursor:pointer;
+    font-weight: 400;
+  }
+  .checkbox-row input[type="checkbox"]{
+    width: 18px; height: 18px;
+    margin-top: 2px;
+    accent-color: var(--ink);
+    flex-shrink: 0;
+  }
+  .checkbox-row span{
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
   .choice-grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
@@ -377,6 +396,11 @@
           <div class="error-msg" data-error-for="parent-email"></div>
           <label for="parent-phone">Phone (optional)</label>
           <input type="tel" id="parent-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+
+          <label class="checkbox-row" for="subscribe-optin">
+            <input type="checkbox" id="subscribe-optin" name="subscribe">
+            <span>Send me STEM tips and occasional updates by email</span>
+          </label>
         </div>
 
         <div class="nav-row" id="form-nav">
@@ -391,7 +415,7 @@
         <div class="summary" id="booking-summary"></div>
 
         <!-- Calendly inline widget begin -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/stemsquirrel" id="calendly-embed"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-LINK-HERE" id="calendly-embed"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         <!-- Calendly inline widget end -->
 
@@ -504,6 +528,7 @@
       clearError('parent-email');
       answers.email = email;
       answers.phone = document.getElementById('parent-phone').value.trim();
+      answers.subscribe = document.getElementById('subscribe-optin').checked;
     }
     return true;
   }
@@ -564,6 +589,30 @@
   }
 
   showStep(0);
+
+  // --- Auto-subscribe on booking completion ---
+  // Calendly's inline widget posts a message to the parent window when the
+  // invitee finishes scheduling. We listen for that, then (only if the
+  // opt-in checkbox was checked) call our own Cloudflare Pages Function,
+  // which holds the MailerLite API key server-side. See /functions/api/subscribe.js.
+  window.addEventListener('message', function(e){
+    if (e.origin !== 'https://calendly.com') return;
+    if (!(e.data && e.data.event === 'calendly.event_scheduled')) return;
+    if (!answers.subscribe || !answers.email) return;
+
+    fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: answers.email,
+        name: answers.studentName || ''
+      })
+    }).catch(function(err){
+      // Booking already succeeded via Calendly regardless of this call,
+      // so we only log — never block or alarm the user over a failed subscribe.
+      console.error('Subscribe request failed:', err);
+    });
+  });
 })();
 </script>
 
