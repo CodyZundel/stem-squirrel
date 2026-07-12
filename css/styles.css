@@ -9,3 +9,25 @@ nav a{color:#fff;text-decoration:none;margin-left:20px}
 .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
 .cta{background:#2F6B3D;color:#fff;text-align:center;padding:50px 20px}
 footer{background:#222;color:#ddd;text-align:center;padding:20px}
+.contact-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-page input,
+.contact-page textarea {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.contact-page button {
+    padding: 12px;
+    cursor: pointer;
+}
