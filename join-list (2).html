@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the list — StemSquirrel</title>
+<meta name="description" content="Get STEM tips, seasonal openings, and the occasional good worksheet in your inbox.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2505494');
+</script>
+<!-- End MailerLite Universal -->
+
+
+<style>
+  :root{
+    --paper: #EDF0E6;
+    --paper-line: #D9DECC;
+    --ink: #1F3D2B;
+    --ink-soft: #3F5C46;
+    --amber: #C1852F;
+    --amber-deep: #9C6A22;
+    --slate: #3F5C6C;
+    --card: #FBFAF5;
+    --radius: 14px;
+    --font-display: "Fraunces", serif;
+    --font-body: "Work Sans", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    background: var(--paper);
+    background-image: linear-gradient(var(--paper-line) 1px, transparent 1px);
+    background-size: 100% 44px;
+    color: var(--ink);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  header.top{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  header.top .brand{
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  header.top .brand span{ color: var(--amber-deep); }
+  header.top a.back{
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  header.top a.back:hover{ color: var(--ink); }
+
+  main{
+    text-align: center;
+  }
+
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--amber-deep);
+    background: rgba(193,133,47,0.1);
+    border: 1px solid rgba(193,133,47,0.25);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 24px;
+  }
+
+  h1{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.15;
+    margin: 0 0 16px;
+  }
+  .lede{
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 46ch;
+    margin: 0 auto 40px;
+  }
+
+  .whats-inside{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 560px;
+    margin: 0 auto 44px;
+    text-align: left;
+  }
+  .whats-inside .item{
+    background: var(--card);
+    border: 1px solid var(--paper-line);
+    border-radius: 10px;
+    padding: 16px 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .whats-inside .item svg{
+    width: 20px; height: 20px;
+    color: var(--amber);
+    margin-bottom: 8px;
+    display:block;
+  }
+  .whats-inside .item strong{
+    display:block;
+    color: var(--ink);
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .panel{
+    background: var(--card);
+    border: 1px solid var(--paper-line);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: 0 1px 2px rgba(31,61,43,0.05);
+    text-align: left;
+  }
+
+  .fineprint{
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 18px;
+  }
+
+  @media (max-width: 560px){
+    .whats-inside{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/">Stem<span>Squirrel</span></a>
+    <a class="back" href="/">← Back to site</a>
+  </header>
+
+  <main>
+    <span class="badge">Free · no spam</span>
+    <h1>Get STEM tips in your inbox.</h1>
+    <p class="lede">Short, useful emails — practice ideas, seasonal availability, and the occasional worksheet worth keeping. Unsubscribe anytime.</p>
+
+    <div class="whats-inside">
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M6 19V9l6-4 6 4v10"/></svg>
+        <strong>Learning tips</strong>
+        Practical ideas you can use at home
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+        <strong>Openings</strong>
+        First look at new tutoring slots
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <strong>No noise</strong>
+        A couple emails a month, tops
+      </div>
+    </div>
+
+    <div class="panel" id="signup-form-mount">
+      <div class="ml-embedded" data-form="YfzBr6"></div>
+    </div>
+
+    <p class="fineprint">No spam, ever. One click to unsubscribe.</p>
+  </main>
+</div>
+
+</body>
+</html>
