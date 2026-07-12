@@ -46,7 +46,7 @@ export async function onRequestPost(context) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'Bearer ' + env.MAILERLITE_API_KEY
+        'Authorization': 'Bearer ' + env.MailerLite_API_Key
       },
       body: JSON.stringify(payload)
     });
