@@ -12,20 +12,6 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    if (url.pathname === '/api/debug-env') {
-      // TEMPORARY — remove this route once the secrets issue is resolved.
-      // Reports only true/false for each expected secret, never the values.
-      return new Response(JSON.stringify({
-        hasResend: !!env.RESEND_API_KEY,
-        hasTurnstile: !!env.TURNSTILE_SECRET_KEY,
-        hasMailerlite: !!env.MAILERLITE_API_KEY,
-        hasMailerliteGroup: !!env.MAILERLITE_GROUP_ID
-      }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-
     if (url.pathname === '/api/apply') {
       if (request.method !== 'POST') return methodNotAllowed();
       return handleApply(request, env);
