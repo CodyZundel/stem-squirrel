@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Client Intake | StemSquirrel MCAT</title>
+<meta name="description" content="Private intake questionnaire.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="brand"><span class="brand-mark">SS</span>StemSquirrel</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="app-intro">
+    <div class="private-notice">Private link — please don't share this page</div>
+    <h1>Welcome aboard. Let's build your Success Blueprint.</h1>
+    <p class="sub">This is the real deal — the more honest and detailed you are, the more personalized your coaching will be. There's no grading here, just useful information. Take your time.</p>
+  </section>
+
+  <div class="app-error-banner" id="app-error-banner"></div>
+
+  <form class="app-form" id="app-form" novalidate>
+
+    <!-- Section 0: About you -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Before we start</div>
+        <h2>About you</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="fullName" required>
+        <div class="error-msg" data-error-for="full-name"></div>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error-msg" data-error-for="email"></div>
+      </div>
+    </section>
+
+    <!-- Section 1: Goals & Timeline -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 1</div>
+        <h2>Goals &amp; Timeline</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s1-test-date">What is your target MCAT test date?</label>
+        <input type="date" id="s1-test-date" name="s1TestDate">
+      </div>
+      <div class="q">
+        <div class="q-label">Is this date fixed, or are you willing to postpone if necessary?</div>
+        <div class="chip-grid" data-key="s1Flexibility">
+          <button type="button" class="chip" data-value="Fixed">Fixed</button>
+          <button type="button" class="chip" data-value="Somewhat flexible">Somewhat flexible</button>
+          <button type="button" class="chip" data-value="Completely flexible">Completely flexible</button>
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s1-goal-score">What is your goal score range?</label>
+        <input type="text" id="s1-goal-score" name="s1GoalScore" placeholder="e.g. 515-518">
+      </div>
+      <div class="q">
+        <label class="q-label" for="s1-why-goal">Why is that your goal score?</label>
+        <textarea id="s1-why-goal" name="s1WhyGoal" rows="3"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s1-schools">What schools are you hoping to apply to? <span class="q-optional">(optional)</span></label>
+        <textarea id="s1-schools" name="s1Schools" rows="2"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 2: Academic Background -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 2</div>
+        <h2>Academic Background</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s2-major">What is your undergraduate major?</label>
+        <input type="text" id="s2-major" name="s2Major">
+      </div>
+      <div class="q">
+        <label class="q-label" for="s2-grad-year">What year did you graduate (or will you graduate)?</label>
+        <input type="text" id="s2-grad-year" name="s2GradYear">
+      </div>
+      <div class="q">
+        <div class="q-label">Which prerequisite courses have you completed? <span class="q-optional">(check all that apply)</span></div>
+        <div class="chip-grid" data-key="s2Prereqs" data-multi="true">
+          <button type="button" class="chip chip-multi" data-value="General Chemistry 1 and 2">General Chemistry 1 and 2</button>
+          <button type="button" class="chip chip-multi" data-value="Organic Chemistry 1 and 2">Organic Chemistry 1 and 2</button>
+          <button type="button" class="chip chip-multi" data-value="Biology">Biology</button>
+          <button type="button" class="chip chip-multi" data-value="Biochemistry">Biochemistry</button>
+          <button type="button" class="chip chip-multi" data-value="Physics">Physics</button>
+          <button type="button" class="chip chip-multi" data-value="Psychology">Psychology</button>
+          <button type="button" class="chip chip-multi" data-value="Sociology">Sociology</button>
+          <button type="button" class="chip chip-multi" data-value="Statistics">Statistics</button>
+          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="s2Prereqs">
+          <input type="text" id="s2Prereqs-other" placeholder="Please specify">
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s2-struggled">Which courses did you struggle with the most?</label>
+        <textarea id="s2-struggled" name="s2Struggled" rows="3"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s2-natural">Which courses came naturally to you?</label>
+        <textarea id="s2-natural" name="s2Natural" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 3: MCAT History -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 3</div>
+        <h2>MCAT History</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s3-official">Have you taken the official MCAT? If yes, list date(s) and score(s).</label>
+        <textarea id="s3-official" name="s3Official" rows="3" placeholder="If not, just say 'no'"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s3-retake">Is this a retake? If so, what do you think went wrong last time, and what (if anything) did you change in your approach?</label>
+        <textarea id="s3-retake" name="s3Retake" rows="4"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s3-fl-count">How many full-length practice exams have you taken?</label>
+        <input type="text" id="s3-fl-count" name="s3FlCount">
+      </div>
+      <div class="q">
+        <label class="q-label" for="s3-recent-scores">Your most recent full-length score(s) — broken down by section, not just the total</label>
+        <textarea id="s3-recent-scores" name="s3RecentScores" rows="3" placeholder="e.g. C/P 128, CARS 126, B/B 129, P/S 127"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s3-conditions">Under what conditions do you take full-lengths? (timed, quiet room, same time of day as your real test, on a computer)</label>
+        <textarea id="s3-conditions" name="s3Conditions" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <div class="q-label">Do you consistently run out of time on any section, or finish with time to spare?</div>
+        <div class="chip-grid" data-key="s3Timing">
+          <button type="button" class="chip" data-value="Run out of time">Run out of time</button>
+          <button type="button" class="chip" data-value="Finish with time to spare">Finish with time to spare</button>
+          <button type="button" class="chip" data-value="Varies by section">Varies by section</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="q-label">Which section has consistently been your strongest?</div>
+        <div class="chip-grid" data-key="s3Strongest">
+          <button type="button" class="chip" data-value="Chem/Phys">Chem/Phys</button>
+          <button type="button" class="chip" data-value="CARS">CARS</button>
+          <button type="button" class="chip" data-value="Bio/Biochem">Bio/Biochem</button>
+          <button type="button" class="chip" data-value="Psych/Soc">Psych/Soc</button>
+        </div>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Which section has consistently been your weakest?</div>
+        <div class="chip-grid" data-key="s3Weakest">
+          <button type="button" class="chip" data-value="Chem/Phys">Chem/Phys</button>
+          <button type="button" class="chip" data-value="CARS">CARS</button>
+          <button type="button" class="chip" data-value="Bio/Biochem">Bio/Biochem</button>
+          <button type="button" class="chip" data-value="Psych/Soc">Psych/Soc</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Content Diagnostics -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 4</div>
+        <h2>Content Diagnostics</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s4-weak-areas">Within each section, which content areas are weakest? <span class="q-optional">(e.g., in C/P: physics vs. gen chem vs. biochem; in P/S: specific theories or research design; CARS: certain passage types)</span></label>
+        <textarea id="s4-weak-areas" name="s4WeakAreas" rows="4"></textarea>
+      </div>
+      <div class="q">
+        <div class="q-label">Have you completed content review, or are you still working through it?</div>
+        <div class="chip-grid" data-key="s4ContentReview">
+          <button type="button" class="chip" data-value="Completed">Completed</button>
+          <button type="button" class="chip" data-value="Still working through it">Still working through it</button>
+          <button type="button" class="chip" data-value="Haven't started">Haven't started</button>
+        </div>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Do your errors tend to be content gaps or reasoning/execution errors?</div>
+        <div class="chip-grid" data-key="s4ErrorType">
+          <button type="button" class="chip" data-value="Content gaps (didn't know it)">Content gaps (didn't know it)</button>
+          <button type="button" class="chip" data-value="Reasoning/execution (knew it, missed it)">Reasoning/execution (knew it, missed it)</button>
+          <button type="button" class="chip" data-value="Both / not sure">Both / not sure</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Current Resources -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 5</div>
+        <h2>Current Resources</h2>
+      </div>
+      <div class="q">
+        <div class="q-label">Which resources do you currently own? <span class="q-optional">(check all that apply)</span></div>
+        <div class="chip-grid" data-key="s5Owned" data-multi="true">
+          <button type="button" class="chip chip-multi" data-value="Kaplan">Kaplan</button>
+          <button type="button" class="chip chip-multi" data-value="Princeton Review">Princeton Review</button>
+          <button type="button" class="chip chip-multi" data-value="Blueprint">Blueprint</button>
+          <button type="button" class="chip chip-multi" data-value="UWorld">UWorld</button>
+          <button type="button" class="chip chip-multi" data-value="AAMC Bundle">AAMC Bundle</button>
+          <button type="button" class="chip chip-multi" data-value="Khan Academy">Khan Academy</button>
+          <button type="button" class="chip chip-multi" data-value="Jack Westin">Jack Westin</button>
+          <button type="button" class="chip chip-multi" data-value="Anki">Anki</button>
+          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="s5Owned">
+          <input type="text" id="s5Owned-other" placeholder="Please specify">
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s5-regular">Which resources do you actually use regularly?</label>
+        <textarea id="s5-regular" name="s5Regular" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s5-helpful">Which resources have helped you the most?</label>
+        <textarea id="s5-helpful" name="s5Helpful" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s5-disappointing">Which resources have been disappointing?</label>
+        <textarea id="s5-disappointing" name="s5Disappointing" rows="2"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Do you have budget/appetite for additional resources if I recommend them, or should I work within what you already own?</div>
+        <div class="chip-grid" data-key="s5Budget">
+          <button type="button" class="chip" data-value="Open to more">Open to more</button>
+          <button type="button" class="chip" data-value="Work within what I have">Work within what I have</button>
+          <button type="button" class="chip" data-value="Not sure yet">Not sure yet</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Study Habits -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 6</div>
+        <h2>Study Habits</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s6-typical-week">Walk me through a typical week of studying.</label>
+        <textarea id="s6-typical-week" name="s6TypicalWeek" rows="5"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s6-hours">How many hours per week are you realistically studying?</label>
+        <input type="text" id="s6-hours" name="s6Hours">
+      </div>
+      <div class="q">
+        <label class="q-label" for="s6-passive-active">Of those hours, roughly what percentage is passive (reading/watching) vs. active (practice questions, recall, teaching)?</label>
+        <input type="text" id="s6-passive-active" name="s6PassiveActive" placeholder="e.g. 30% passive / 70% active">
+      </div>
+      <div class="q">
+        <div class="q-label">How consistent are you?</div>
+        <div class="slider-row">
+          <input type="range" id="s6-consistency-slider" min="1" max="10" value="5">
+          <span class="slider-val" id="s6-consistency-val">5</span>
+        </div>
+        <div class="slider-labels"><span>Not consistent</span><span>Very consistent</span></div>
+        <label class="q-label" for="s6-consistency-blocker" style="margin-top:14px;">What's getting in the way of being more consistent? (school, work, personal life, etc.)</label>
+        <textarea id="s6-consistency-blocker" name="s6ConsistencyBlocker" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s6-review-missed">How do you review missed practice questions?</label>
+        <textarea id="s6-review-missed" name="s6ReviewMissed" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <div class="q-label">How often do you review old material?</div>
+        <div class="chip-grid" data-key="s6ReviewFrequency">
+          <button type="button" class="chip" data-value="Daily">Daily</button>
+          <button type="button" class="chip" data-value="Weekly">Weekly</button>
+          <button type="button" class="chip" data-value="Rarely">Rarely</button>
+          <button type="button" class="chip" data-value="Never">Never</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="q-label">Do you keep an error log or track weaknesses by content category / question type?</div>
+        <div class="chip-grid" data-key="s6ErrorLog">
+          <button type="button" class="chip" data-value="Yes">Yes</button>
+          <button type="button" class="chip" data-value="No">No</button>
+          <button type="button" class="chip" data-value="Sort of">Sort of</button>
+        </div>
+        <label class="q-label" for="s6-error-log-detail" style="margin-top:10px;">If yes, describe it briefly (you can share the actual log with me separately)</label>
+        <textarea id="s6-error-log-detail" name="s6ErrorLogDetail" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s6-best-time">What time of day do you study best, and does your schedule let you study then?</label>
+        <textarea id="s6-best-time" name="s6BestTime" rows="2"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s6-distraction">What's your biggest source of distraction during study sessions?</label>
+        <input type="text" id="s6-distraction" name="s6Distraction">
+      </div>
+    </section>
+
+    <!-- Section 7: Learning Style -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 7</div>
+        <h2>Learning Style</h2>
+      </div>
+      <div class="q">
+        <div class="q-label">Rank the following from most (1) to least (7) helpful</div>
+        <div class="rank-list" id="rank-list">
+          <div class="rank-row"><select class="rank-select" data-item="Reading"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Reading</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Videos"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Videos</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Practice Questions"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Practice Questions</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Flashcards"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Flashcards</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Teaching Others"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Teaching Others</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Diagrams"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Diagrams</span></div>
+          <div class="rank-row"><select class="rank-select" data-item="Discussion"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select><span class="rank-label">Discussion</span></div>
+        </div>
+        <div class="rank-duplicate-warning" id="rank-duplicate-warning">Heads up — you've used the same rank more than once. Doesn't need to be perfect, just try to make each number unique if you can.</div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s7-confused">When you're confused by a concept, what do you usually do?</label>
+        <textarea id="s7-confused" name="s7Confused" rows="3"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s7-teaching-style">What type of teaching has worked best for you in the past, and what methods are you open to trying?</label>
+        <textarea id="s7-teaching-style" name="s7TeachingStyle" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 8: Lifestyle -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 8</div>
+        <h2>Lifestyle</h2>
+      </div>
+      <div class="q">
+        <div class="q-label">Are you currently: <span class="q-optional">(check all that apply)</span></div>
+        <div class="chip-grid" data-key="s8Currently" data-multi="true">
+          <button type="button" class="chip chip-multi" data-value="Working full-time">Working full-time</button>
+          <button type="button" class="chip chip-multi" data-value="Working part-time">Working part-time</button>
+          <button type="button" class="chip chip-multi" data-value="Full-time student">Full-time student</button>
+          <button type="button" class="chip chip-multi" data-value="Part-time student">Part-time student</button>
+          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="s8Currently">
+          <input type="text" id="s8Currently-other" placeholder="Please specify">
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s8-committed-hours">Approximately how many hours each week are committed to work or school?</label>
+        <input type="text" id="s8-committed-hours" name="s8CommittedHours">
+      </div>
+      <div class="q">
+        <label class="q-label" for="s8-sleep">How many hours of sleep do you usually get?</label>
+        <input type="text" id="s8-sleep" name="s8Sleep">
+      </div>
+      <div class="q">
+        <div class="q-label">Do you exercise regularly?</div>
+        <div class="chip-grid" data-key="s8Exercise">
+          <button type="button" class="chip" data-value="Regularly">Regularly</button>
+          <button type="button" class="chip" data-value="Occasionally">Occasionally</button>
+          <button type="button" class="chip" data-value="Rarely">Rarely</button>
+          <button type="button" class="chip" data-value="Never">Never</button>
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s8-caffeine">Any caffeine/nutrition habits that affect your focus or energy during study blocks?</label>
+        <textarea id="s8-caffeine" name="s8Caffeine" rows="2"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s8-other-responsibilities">What other responsibilities compete for your time? <span class="q-optional">(family, children, research, volunteering, athletics, other)</span></label>
+        <textarea id="s8-other-responsibilities" name="s8OtherResponsibilities" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <div class="q-label">Do you have an accountability partner, study group, or support system, or are you studying solo?</div>
+        <div class="chip-grid" data-key="s8SupportSystem">
+          <button type="button" class="chip" data-value="Have a partner/group">Have a partner/group</button>
+          <button type="button" class="chip" data-value="Studying solo">Studying solo</button>
+          <button type="button" class="chip" data-value="A bit of both">A bit of both</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="q-label">Would you like an accountability partner or study group to work with?</div>
+        <div class="chip-grid" data-key="s8WantAccountability">
+          <button type="button" class="chip" data-value="Yes">Yes</button>
+          <button type="button" class="chip" data-value="No">No</button>
+          <button type="button" class="chip" data-value="Maybe">Maybe</button>
+        </div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s8-health">Any physical or mental health issues that affect your studying? <span class="q-optional">(optional)</span></label>
+        <textarea id="s8-health" name="s8Health" rows="3"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s8-other-factors">Is there any other personal factor we should consider in tailoring your coaching? <span class="q-optional">(optional)</span></label>
+        <textarea id="s8-other-factors" name="s8OtherFactors" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 9: Mindset -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 9</div>
+        <h2>Mindset</h2>
+      </div>
+      <div class="q">
+        <div class="q-label">How confident are you that you can reach your goal score?</div>
+        <div class="slider-row">
+          <input type="range" id="s9-confidence-slider" min="1" max="10" value="5">
+          <span class="slider-val" id="s9-confidence-val">5</span>
+        </div>
+        <div class="slider-labels"><span>Not confident</span><span>Very confident</span></div>
+      </div>
+      <div class="q">
+        <div class="q-label">How much do you feel like you control your final score?</div>
+        <div class="slider-row">
+          <input type="range" id="s9-control-slider" min="1" max="10" value="5">
+          <span class="slider-val" id="s9-control-val">5</span>
+        </div>
+        <div class="slider-labels"><span>Not much control</span><span>Total control</span></div>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s9-fear">What is your biggest fear regarding the MCAT?</label>
+        <textarea id="s9-fear" name="s9Fear" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s9-motivation">What motivates you to keep studying?</label>
+        <textarea id="s9-motivation" name="s9Motivation" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s9-disappointing-response">How do you typically respond after a disappointing practice exam?</label>
+        <textarea id="s9-disappointing-response" name="s9DisappointingResponse" rows="3"></textarea>
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Do you experience test anxiety specifically on test day, separate from your practice performance?</div>
+        <div class="chip-grid" data-key="s9TestAnxiety">
+          <button type="button" class="chip" data-value="Yes, significantly">Yes, significantly</button>
+          <button type="button" class="chip" data-value="Somewhat">Somewhat</button>
+          <button type="button" class="chip" data-value="No, performs consistently">No, performs consistently</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Coaching -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 10</div>
+        <h2>Coaching</h2>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s10-why-coach">Why did you decide to hire a coach instead of continuing on your own?</label>
+        <textarea id="s10-why-coach" name="s10WhyCoach" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s10-past-coaching">What has coaching/tutoring (if any — MCAT or otherwise) looked like for you in the past, and what worked or didn't?</label>
+        <textarea id="s10-past-coaching" name="s10PastCoaching" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <label class="q-label" for="s10-hope-for">What do you hope I'll help you with the most?</label>
+        <textarea id="s10-hope-for" name="s10HopeFor" rows="3"></textarea>
+      </div>
+      <div class="q">
+        <div class="q-label">How do you prefer to communicate between sessions? <span class="q-optional">(check all that apply)</span></div>
+        <div class="chip-grid" data-key="s10CommMethod" data-multi="true">
+          <button type="button" class="chip chip-multi" data-value="Email">Email</button>
+          <button type="button" class="chip chip-multi" data-value="Text">Text</button>
+          <button type="button" class="chip chip-multi" data-value="Calls">Calls</button>
+        </div>
+        <label class="q-label" for="s10-comm-frequency" style="margin-top:10px;">How often?</label>
+        <input type="text" id="s10-comm-frequency" name="s10CommFrequency" placeholder="e.g. quick check-in after every session">
+      </div>
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="s10-anything-else">Is there anything else you'd like me to know before creating your Success Blueprint? <span class="q-optional">(optional)</span></label>
+        <textarea id="s10-anything-else" name="s10AnythingElse" rows="4"></textarea>
+      </div>
+    </section>
+
+    <div class="app-section" style="text-align:center;">
+      <div class="app-submit-row" style="justify-content:center;">
+        <button type="submit" class="btn btn-gold" id="app-submit-btn">Submit intake</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="app-success" id="app-success">
+    <div class="check">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Got it — thank you.</h2>
+    <p>This was a lot, and I appreciate you taking the time to be thorough. I'll use this to build your Success Blueprint before our next session.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="brand"><span class="brand-mark">SS</span>StemSquirrel</span>
+    <div class="footer-fine">© 2026 StemSquirrel — private page</div>
+  </div>
+</footer>
+
+<script src="js/client-intake.js"></script>
+</body>
+</html>
