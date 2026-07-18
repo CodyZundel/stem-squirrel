@@ -162,7 +162,7 @@
 
       resources: (answers.resources || []).concat(resourcesOther ? ['Other: ' + resourcesOther] : []),
       studyHours: answers.studyHours || '',
-      currentStatus: (answers.currentStatus || '') + (currentStatusOther ? (' (' + currentStatusOther + ')') : ''),
+      currentStatus: (answers.currentStatus || []).concat(currentStatusOther ? ['Other: ' + currentStatusOther] : []),
       priorHelp: val('prior-help'),
 
       weakestSection: answers.weakestSection || '',
