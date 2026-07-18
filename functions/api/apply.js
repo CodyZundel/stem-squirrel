@@ -185,5 +185,3 @@ function jsonResponse(obj, status) {
     headers: { 'Content-Type': 'application/json' }
   });
 }
-
-
