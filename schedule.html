@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book your consultation — StemSquirrel</title>
-<meta name="description" content="Tell us a bit about your MCAT prep, then pick a time for your first session.">
+<meta name="description" content="Tell us about your MCAT prep, then pick a time for your first session.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,11 @@
 <div class="wrap booking-page" style="padding-top: 40px; padding-bottom: 80px;">
   <header class="booking-header">
     <a class="brand" href="index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;"><span class="brand-mark">SS</span>StemSquirrel</a>
-    <div>Step <span id="step-indicator">1</span> of <span id="step-total">5</span></div>
+    <div>Step <span id="step-indicator">1</span> of <span id="step-total">11</span></div>
   </header>
 
-  <h1>Let's get your first session on the calendar.</h1>
-  <p class="lede">A few quick questions so I can prep, then you'll pick a time that works.</p>
+  <h1>Let's build a plan that's actually yours.</h1>
+  <p class="lede">The more I know going in, the less time we waste. Skip anything you'd rather not answer — we can cover it on the call.</p>
 
   <div class="layout">
     <nav class="ruler" aria-hidden="true">
@@ -40,9 +40,24 @@
         </div>
 
         <div class="step" data-step="1" id="step-1">
+          <div class="eyebrow" style="color:var(--gold-deep);">Timeline</div>
+          <h2>When is your test date, and what's your goal score?</h2>
+          <div class="field-row">
+            <div>
+              <label for="test-date">Test date (if scheduled)</label>
+              <input type="date" id="test-date" name="testDate">
+            </div>
+            <div>
+              <label for="goal-score">Goal score</label>
+              <input type="text" id="goal-score" name="goalScore" placeholder="e.g. 515">
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2" id="step-2">
           <div class="eyebrow" style="color:var(--gold-deep);">Prep stage</div>
           <h2>Where are you in your MCAT prep?</h2>
-          <div class="choice-grid" role="group" aria-label="Prep stage" id="prep-choices">
+          <div class="choice-grid" role="group" aria-label="Prep stage" id="prep-choices" data-key="prepStage">
             <button type="button" class="choice" data-value="Just starting out">Just starting out</button>
             <button type="button" class="choice" data-value="Mid-prep, need direction">Mid-prep, need direction</button>
             <button type="button" class="choice" data-value="Retaking the exam">Retaking the exam</button>
@@ -51,30 +66,148 @@
           <div class="error-msg" data-error-for="prep-stage"></div>
         </div>
 
-        <div class="step" data-step="2" id="step-2">
-          <div class="eyebrow" style="color:var(--gold-deep);">Focus area</div>
-          <h2>What's your biggest struggle area?</h2>
-          <label for="focus-area">You can go deeper on this during the call</label>
-          <select id="focus-area" name="focusArea">
-            <option value="">Select a focus area</option>
-            <option>CARS</option>
-            <option>Chem/Phys</option>
-            <option>Bio/Biochem</option>
-            <option>Psych/Soc</option>
-            <option>Time management</option>
-            <option>Not sure yet</option>
-          </select>
-          <div class="error-msg" data-error-for="focus-area"></div>
-        </div>
-
         <div class="step" data-step="3" id="step-3">
-          <div class="eyebrow" style="color:var(--gold-deep);">Goals</div>
-          <h2>What's your target score and test date?</h2>
-          <label for="goals">Optional — anything helps me prep for the call</label>
-          <textarea id="goals" name="goals" placeholder="e.g. Aiming for 515+, testing in September"></textarea>
+          <div class="eyebrow" style="color:var(--gold-deep);">Academic background</div>
+          <h2>What's your major, and have you finished your prereqs?</h2>
+          <div class="field-group">
+            <label for="major">Undergraduate major</label>
+            <input type="text" id="major" name="major" placeholder="e.g. Biology">
+          </div>
+          <div class="field-group">
+            <label>Prerequisite coursework (bio, gen chem, orgo, physics, biochem, psych/soc)</label>
+            <div class="choice-grid" role="group" aria-label="Prerequisite status" id="prereq-choices" data-key="prereqs">
+              <button type="button" class="choice" data-value="All done">All done</button>
+              <button type="button" class="choice" data-value="Some remaining">Some remaining</button>
+              <button type="button" class="choice" data-value="Haven't started">Haven't started</button>
+            </div>
+          </div>
         </div>
 
         <div class="step" data-step="4" id="step-4">
+          <div class="eyebrow" style="color:var(--gold-deep);">Prior testing</div>
+          <h2>Have you taken a full-length practice test or the real MCAT?</h2>
+          <div class="field-group">
+            <div class="choice-grid" role="group" aria-label="Prior testing" id="prior-test-choices" data-key="priorTesting">
+              <button type="button" class="choice" data-value="Official MCAT">Official MCAT</button>
+              <button type="button" class="choice" data-value="Practice test only">Practice test only</button>
+              <button type="button" class="choice" data-value="Not yet">Not yet</button>
+            </div>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label for="recent-score">Most recent score (if any)</label>
+            <input type="text" id="recent-score" name="recentScore" placeholder="e.g. 508, or by section">
+          </div>
+        </div>
+
+        <div class="step" data-step="5" id="step-5">
+          <div class="eyebrow" style="color:var(--gold-deep);">Diagnostic</div>
+          <h2>Where do you feel strongest and weakest?</h2>
+          <div class="field-group">
+            <div class="field-row">
+              <div>
+                <label for="strongest-section">Strongest section</label>
+                <select id="strongest-section" name="strongestSection">
+                  <option value="">Select a section</option>
+                  <option>CARS</option>
+                  <option>Chem/Phys</option>
+                  <option>Bio/Biochem</option>
+                  <option>Psych/Soc</option>
+                </select>
+              </div>
+              <div>
+                <label for="weakest-section">Weakest section</label>
+                <select id="weakest-section" name="weakestSection">
+                  <option value="">Select a section</option>
+                  <option>CARS</option>
+                  <option>Chem/Phys</option>
+                  <option>Bio/Biochem</option>
+                  <option>Psych/Soc</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label>What's the bigger issue — content, timing, anxiety, or application?</label>
+            <div class="choice-grid" role="group" aria-label="Biggest challenge" id="challenge-choices" data-key="challenge">
+              <button type="button" class="choice" data-value="Content knowledge">Content knowledge</button>
+              <button type="button" class="choice" data-value="Timing">Timing</button>
+              <button type="button" class="choice" data-value="Test anxiety">Test anxiety</button>
+              <button type="button" class="choice" data-value="Applying concepts">Applying concepts</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="6" id="step-6">
+          <div class="eyebrow" style="color:var(--gold-deep);">Logistics</div>
+          <h2>How much time can you realistically give this?</h2>
+          <div class="field-group">
+            <label>Hours per week, including independent study</label>
+            <div class="choice-grid" role="group" aria-label="Study hours per week" id="hours-choices" data-key="hours">
+              <button type="button" class="choice" data-value="Under 10">Under 10</button>
+              <button type="button" class="choice" data-value="10-20">10–20</button>
+              <button type="button" class="choice" data-value="20-30">20–30</button>
+              <button type="button" class="choice" data-value="30+">30+</button>
+            </div>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label>Session format</label>
+            <div class="choice-grid" role="group" aria-label="Session format" id="format-choices" data-key="format">
+              <button type="button" class="choice" data-value="Virtual">Virtual</button>
+              <button type="button" class="choice" data-value="In-person">In-person</button>
+              <button type="button" class="choice" data-value="Hybrid">Hybrid</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="7" id="step-7">
+          <div class="eyebrow" style="color:var(--gold-deep);">Goals</div>
+          <h2>What schools are you targeting, and is this your first cycle?</h2>
+          <div class="field-group">
+            <label for="target-schools">Target schools or programs (optional)</label>
+            <input type="text" id="target-schools" name="targetSchools" placeholder="e.g. State MD programs, a few reach schools">
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <div class="choice-grid" role="group" aria-label="Application cycle" id="cycle-choices" data-key="cycle">
+              <button type="button" class="choice" data-value="First cycle">First application cycle</button>
+              <button type="button" class="choice" data-value="Reapplying">Reapplying</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="8" id="step-8">
+          <div class="eyebrow" style="color:var(--gold-deep);">How you learn</div>
+          <h2>What actually helps information stick?</h2>
+          <div class="field-group">
+            <div class="choice-grid" role="group" aria-label="Learning style" id="learning-choices" data-key="learningStyle">
+              <button type="button" class="choice" data-value="Practice problems">Practice problems</button>
+              <button type="button" class="choice" data-value="Flashcards">Flashcards</button>
+              <button type="button" class="choice" data-value="Teaching it back">Teaching it back</button>
+              <button type="button" class="choice" data-value="Video content">Video content</button>
+              <button type="button" class="choice" data-value="A mix of everything">A mix of everything</button>
+            </div>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <div class="choice-grid" role="group" aria-label="Pace preference" id="pace-choices" data-key="pace">
+              <button type="button" class="choice" data-value="Structured plan">I want a structured plan</button>
+              <button type="button" class="choice" data-value="Flexible, go with the flow">I prefer flexible, go-with-the-flow</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="9" id="step-9">
+          <div class="eyebrow" style="color:var(--gold-deep);">Anything else</div>
+          <h2>Anything going on that would help me build a realistic plan?</h2>
+          <div class="field-group">
+            <label for="life-context">Work, school, family — whatever's relevant. Totally optional.</label>
+            <textarea id="life-context" name="lifeContext" placeholder="e.g. Working part-time, also studying for a class exam next month"></textarea>
+          </div>
+          <div class="field-group" style="margin-bottom:0;">
+            <label for="accommodations">Accommodations or learning differences I should know about</label>
+            <textarea id="accommodations" name="accommodations" placeholder="Optional and confidential — e.g. extended time, ADHD"></textarea>
+          </div>
+        </div>
+
+        <div class="step" data-step="10" id="step-10">
           <div class="eyebrow" style="color:var(--gold-deep);">Contact info</div>
           <h2>Where should we send the confirmation?</h2>
           <label for="user-email">Email</label>
@@ -82,6 +215,27 @@
           <div class="error-msg" data-error-for="user-email"></div>
           <label for="user-phone">Phone (optional)</label>
           <input type="tel" id="user-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+
+          <div class="field-group" style="margin-top:20px;">
+            <label>Preferred contact method</label>
+            <div class="choice-grid" role="group" aria-label="Preferred contact method" id="contact-pref-choices" data-key="contactPref">
+              <button type="button" class="choice" data-value="Email">Email</button>
+              <button type="button" class="choice" data-value="Text">Text</button>
+              <button type="button" class="choice" data-value="Call">Call</button>
+            </div>
+          </div>
+
+          <div class="field-group" style="margin-bottom:0;">
+            <label for="referral">How'd you hear about StemSquirrel? (optional)</label>
+            <select id="referral" name="referral">
+              <option value="">Select one</option>
+              <option>Instagram</option>
+              <option>Reddit</option>
+              <option>Friend or classmate</option>
+              <option>Google search</option>
+              <option>Other</option>
+            </select>
+          </div>
 
           <label class="checkbox-row" for="subscribe-optin">
             <input type="checkbox" id="subscribe-optin" name="subscribe">
@@ -95,7 +249,7 @@
         </div>
       </form>
 
-      <div class="step" data-step="5" id="step-booking">
+      <div class="step" data-step="11" id="step-booking">
         <div class="eyebrow" style="color:var(--gold-deep);">Last step</div>
         <h2>Pick a time for your first session</h2>
         <div class="summary" id="booking-summary"></div>

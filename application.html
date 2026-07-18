@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for Coaching | StemSquirrel MCAT</title>
+<meta name="description" content="Apply for 1:1 MCAT coaching with StemSquirrel. Takes 10-15 minutes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">SS</span>StemSquirrel</a>
+    <nav class="site-nav">
+      <div class="nav-links">
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="btn btn-gold" href="application.html">Apply now</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="app-intro">
+    <h1>STEM Squirrel MCAT Coaching Application</h1>
+    <p class="sub">Thank you for your interest in coaching. This application helps us determine whether we're a good fit for each other before we get on a call together. It typically takes 10–15 minutes to complete.</p>
+    <p class="disclaimer">Please note: submitting this application does not guarantee acceptance into coaching. We review every application carefully to make sure coaching is genuinely the right next step for you.</p>
+  </section>
+
+  <div class="app-error-banner" id="app-error-banner"></div>
+
+  <form class="app-form" id="app-form" novalidate>
+
+    <!-- Section 1: Basic Information -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 1</div>
+        <h2>Basic Information</h2>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="fullName" required>
+        <div class="error-msg" data-error-for="full-name"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error-msg" data-error-for="email"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+        <div class="error-msg" data-error-for="phone"></div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Preferred Contact Method</div>
+        <div class="chip-grid" data-key="contactMethod" data-required="true">
+          <button type="button" class="chip" data-value="Email">Email</button>
+          <button type="button" class="chip" data-value="Text">Text</button>
+          <button type="button" class="chip" data-value="Phone">Phone</button>
+        </div>
+        <div class="error-msg" data-error-for="contactMethod"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="city-state">City &amp; State</label>
+        <input type="text" id="city-state" name="cityState" placeholder="e.g. Salt Lake City, UT" required>
+        <div class="error-msg" data-error-for="city-state"></div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Preferred Coaching Format</div>
+        <div class="chip-grid" data-key="coachingFormat" data-required="true">
+          <button type="button" class="chip" data-value="Virtual">Virtual</button>
+          <button type="button" class="chip" data-value="In-Person">In-Person (northern Utah only)</button>
+          <button type="button" class="chip" data-value="Either">Either</button>
+        </div>
+        <div class="error-msg" data-error-for="coachingFormat"></div>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="referral">How did you hear about this program? <span class="q-optional">(optional)</span></label>
+        <input type="text" id="referral" name="referral">
+      </div>
+    </section>
+
+    <!-- Section 2: MCAT Background -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 2</div>
+        <h2>MCAT Background</h2>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Have you taken the MCAT before?</div>
+        <div class="chip-grid" data-key="takenBefore" data-required="true">
+          <button type="button" class="chip" data-value="No">No</button>
+          <button type="button" class="chip" data-value="Yes (once)">Yes (once)</button>
+          <button type="button" class="chip" data-value="Yes (multiple times)">Yes (multiple times)</button>
+        </div>
+        <div class="error-msg" data-error-for="takenBefore"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="recent-score">If you've taken the MCAT or a full-length practice exam, what was your most recent score? <span class="q-optional">(optional)</span></label>
+        <input type="text" id="recent-score" name="recentScore" placeholder="e.g. 508, or by section">
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="goal-score">What score are you aiming for?</label>
+        <input type="text" id="goal-score" name="goalScore" placeholder="e.g. 515" required>
+        <div class="error-msg" data-error-for="goal-score"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="test-date">Planned test date</label>
+        <input type="date" id="test-date" name="testDate">
+        <label class="checkbox-row" for="no-test-date" style="margin-top:8px;">
+          <input type="checkbox" id="no-test-date" name="noTestDate">
+          <span>I haven't planned a date yet</span>
+        </label>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Have you started studying?</div>
+        <div class="chip-grid" data-key="studyStatus" data-required="true">
+          <button type="button" class="chip" data-value="Not yet">Not yet</button>
+          <button type="button" class="chip" data-value="Just started">Just started</button>
+          <button type="button" class="chip" data-value="Studying consistently">Studying consistently</button>
+          <button type="button" class="chip" data-value="Almost test-ready">Almost test-ready</button>
+        </div>
+        <div class="error-msg" data-error-for="studyStatus"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Current Situation -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 3</div>
+        <h2>Current Situation</h2>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Which resources are you currently using? <span class="q-optional">(check all that apply)</span></div>
+        <div class="chip-grid" data-key="resources" data-multi="true">
+          <button type="button" class="chip chip-multi" data-value="AAMC">AAMC</button>
+          <button type="button" class="chip chip-multi" data-value="UWorld">UWorld</button>
+          <button type="button" class="chip chip-multi" data-value="Blueprint">Blueprint</button>
+          <button type="button" class="chip chip-multi" data-value="Kaplan">Kaplan</button>
+          <button type="button" class="chip chip-multi" data-value="Princeton Review">Princeton Review</button>
+          <button type="button" class="chip chip-multi" data-value="Khan Academy">Khan Academy</button>
+          <button type="button" class="chip chip-multi" data-value="Anki">Anki</button>
+          <button type="button" class="chip chip-multi" data-value="Jack Westin">Jack Westin</button>
+          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="resources">
+          <input type="text" id="resources-other" placeholder="Please specify">
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">How many hours can you realistically study each week?</div>
+        <div class="chip-grid" data-key="studyHours" data-required="true">
+          <button type="button" class="chip" data-value="Under 10">Under 10</button>
+          <button type="button" class="chip" data-value="10-15">10–15</button>
+          <button type="button" class="chip" data-value="15-20">15–20</button>
+          <button type="button" class="chip" data-value="20-30">20–30</button>
+          <button type="button" class="chip" data-value="30+">30+</button>
+        </div>
+        <div class="error-msg" data-error-for="studyHours"></div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Are you currently:</div>
+        <div class="chip-grid" data-key="currentStatus" data-required="true">
+          <button type="button" class="chip" data-value="Full-time student">Full-time student</button>
+          <button type="button" class="chip" data-value="Part-time student">Part-time student</button>
+          <button type="button" class="chip" data-value="Working full-time">Working full-time</button>
+          <button type="button" class="chip" data-value="Working part-time">Working part-time</button>
+          <button type="button" class="chip" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="currentStatus">
+          <input type="text" id="currentStatus-other" placeholder="Please specify">
+        </div>
+        <div class="error-msg" data-error-for="currentStatus"></div>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="prior-help">Have you worked with a tutor, course, or coach before — for the MCAT or anything else? If so, what worked or didn't?</label>
+        <textarea id="prior-help" name="priorHelp" rows="4"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 4: Self-Assessment -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 4</div>
+        <h2>Self-Assessment</h2>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Which section do you feel least confident about?</div>
+        <div class="chip-grid" data-key="weakestSection" data-required="true">
+          <button type="button" class="chip" data-value="Biology/Biochemistry">Biology/Biochemistry</button>
+          <button type="button" class="chip" data-value="Chemistry/Physics">Chemistry/Physics</button>
+          <button type="button" class="chip" data-value="CARS">CARS</button>
+          <button type="button" class="chip" data-value="Psychology/Sociology">Psychology/Sociology</button>
+          <button type="button" class="chip" data-value="Honestly... everything">Honestly... everything</button>
+        </div>
+        <div class="error-msg" data-error-for="weakestSection"></div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">What problems are you encountering? <span class="q-optional">(choose multiple)</span></div>
+        <div class="chip-grid" data-key="problems" data-multi="true" id="problems-grid">
+          <button type="button" class="chip chip-multi" data-value="I don't know what to study.">I don't know what to study.</button>
+          <button type="button" class="chip chip-multi" data-value="I struggle with content.">I struggle with content.</button>
+          <button type="button" class="chip chip-multi" data-value="I struggle applying concepts.">I struggle applying concepts.</button>
+          <button type="button" class="chip chip-multi" data-value="I run out of time.">I run out of time.</button>
+          <button type="button" class="chip chip-multi" data-value="I panic during exams.">I panic during exams.</button>
+          <button type="button" class="chip chip-multi" data-value="I can't stay consistent.">I can't stay consistent.</button>
+          <button type="button" class="chip chip-multi" data-value="I'm not motivated to study.">I'm not motivated to study.</button>
+          <button type="button" class="chip chip-multi" data-value="I've plateaued.">I've plateaued.</button>
+          <button type="button" class="chip chip-multi" data-value="I don't know how to study.">I don't know how to study.</button>
+          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        </div>
+        <div class="other-reveal" data-other-for="problems">
+          <input type="text" id="problems-other" placeholder="Please specify">
+        </div>
+
+        <div class="sub-reveal" id="reveal-consistency">
+          <label class="q-label" for="consistency-detail">What do you feel like is preventing you from being consistent?</label>
+          <textarea id="consistency-detail" name="consistencyDetail" rows="3"></textarea>
+        </div>
+
+        <div class="sub-reveal" id="reveal-motivation">
+          <label class="q-label" for="motivation-detail">What is harming your motivation?</label>
+          <textarea id="motivation-detail" name="motivationDetail" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="q">
+        <div class="q-label">On a scale of 1–10, how confident are you that you'll reach your goal score without help?</div>
+        <div class="slider-row">
+          <input type="range" id="confidence-slider" min="1" max="10" value="5">
+          <span class="slider-val" id="confidence-val">5</span>
+        </div>
+        <div class="slider-labels"><span>Not confident</span><span>Very confident</span></div>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="feedback-story">Describe a time you received difficult feedback on your performance. How did you respond?</label>
+        <textarea id="feedback-story" name="feedbackStory" rows="4"></textarea>
+      </div>
+    </section>
+
+    <!-- Section 5: Commitment -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 5</div>
+        <h2>Commitment</h2>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="why-physician">Why is becoming a physician important to you?</label>
+        <textarea id="why-physician" name="whyPhysician" rows="4" required></textarea>
+        <div class="error-msg" data-error-for="why-physician"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="goal-meaning">What would reaching your goal score mean for your future?</label>
+        <textarea id="goal-meaning" name="goalMeaning" rows="4" required></textarea>
+        <div class="error-msg" data-error-for="goal-meaning"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="why-coaching">Why are you looking for coaching instead of continuing to study on your own?</label>
+        <textarea id="why-coaching" name="whyCoaching" rows="4" required></textarea>
+        <div class="error-msg" data-error-for="why-coaching"></div>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="already-tried">What have you already tried to improve your MCAT score?</label>
+        <textarea id="already-tried" name="alreadyTried" rows="4"></textarea>
+      </div>
+
+      <div class="q">
+        <div class="q-label">Coaching requires consistent effort, honesty about your progress, and following through on assignments between sessions. Are you ready to commit to that?</div>
+        <div class="chip-grid" data-key="readyCommit" data-required="true">
+          <button type="button" class="chip" data-value="Yes">Yes</button>
+          <button type="button" class="chip" data-value="No">No</button>
+        </div>
+        <div class="error-msg" data-error-for="readyCommit"></div>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <div class="q-label">Are you prepared to invest financially in coaching if we determine it's the right fit for you?</div>
+        <div class="chip-grid" data-key="financiallyReady" data-required="true">
+          <button type="button" class="chip" data-value="Yes">Yes</button>
+          <button type="button" class="chip" data-value="No">No</button>
+          <button type="button" class="chip" data-value="I'd like to discuss this on the call">I'd like to discuss this on the call</button>
+        </div>
+        <div class="error-msg" data-error-for="financiallyReady"></div>
+      </div>
+    </section>
+
+    <!-- Section 6: Fit -->
+    <section class="app-section">
+      <div class="app-section-head">
+        <div class="app-section-num">Section 6</div>
+        <h2>Fit</h2>
+      </div>
+
+      <div class="q">
+        <label class="q-label" for="hoping-for">What are you hoping a coach will help you with most?</label>
+        <textarea id="hoping-for" name="hopingFor" rows="4" required></textarea>
+        <div class="error-msg" data-error-for="hoping-for"></div>
+      </div>
+
+      <div class="q" style="margin-bottom:0;">
+        <label class="q-label" for="anything-else">Is there anything else I should know before we meet? <span class="q-optional">(optional)</span></label>
+        <textarea id="anything-else" name="anythingElse" rows="4"></textarea>
+      </div>
+    </section>
+
+    <div class="app-section" style="text-align:center;">
+      <p class="app-submit-note" style="margin-bottom:18px;">By submitting this application, you acknowledge that this does not guarantee acceptance into coaching, and that we'll follow up to schedule a fit call if it looks like a good match.</p>
+      <div style="display:flex;justify-content:center;margin-bottom:18px;">
+        <!--
+          Cloudflare Turnstile — replace YOUR_SITE_KEY with the site key from
+          your Turnstile widget (Cloudflare dashboard → Turnstile → Add site).
+          Use a "Managed" widget for the least-friction experience.
+        -->
+        <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-theme="light"></div>
+      </div>
+      <div class="error-msg" data-error-for="captcha" style="text-align:center;margin-bottom:8px;"></div>
+      <div class="app-submit-row" style="justify-content:center;">
+        <button type="submit" class="btn btn-gold" id="app-submit-btn">Submit application</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="app-success" id="app-success">
+    <div class="check">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Application received.</h2>
+    <p>Thanks for taking the time to answer thoughtfully. We review every application carefully — if it looks like a good fit, we'll follow up to schedule a call.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">SS</span>StemSquirrel</a>
+    <div class="footer-links">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="application.html">Apply now</a>
+      <a href="join-list.html">Join the list</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-fine">© 2026 StemSquirrel</div>
+  </div>
+</footer>
+
+<script src="js/application.js"></script>
+</body>
+</html>
