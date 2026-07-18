@@ -794,3 +794,46 @@ input[type="range"]{
 }
 .app-success h2{ font-size: 24px; margin-bottom: 10px; }
 .app-success p{ color: var(--muted); font-size: 15px; max-width: 46ch; margin: 0 auto; line-height: 1.6; }
+
+/* ---------- Ranking widget ---------- */
+.rank-list{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rank-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.rank-row select{
+  width: 64px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  padding: 8px 10px;
+}
+.rank-row .rank-label{ font-size: 14.5px; color: var(--ink); }
+.rank-duplicate-warning{
+  display: none;
+  color: var(--error);
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+.rank-duplicate-warning.visible{ display: block; }
+
+/* ---------- Private page notice ---------- */
+.private-notice{
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--gold-deep);
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.28);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
