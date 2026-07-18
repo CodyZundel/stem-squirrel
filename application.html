@@ -182,13 +182,13 @@
       </div>
 
       <div class="q">
-        <div class="q-label">Are you currently: <span class="q-optional">(check all that apply)</span></div>
-        <div class="chip-grid" data-key="currentStatus" data-multi="true">
-          <button type="button" class="chip chip-multi" data-value="Full-time student">Full-time student</button>
-          <button type="button" class="chip chip-multi" data-value="Part-time student">Part-time student</button>
-          <button type="button" class="chip chip-multi" data-value="Working full-time">Working full-time</button>
-          <button type="button" class="chip chip-multi" data-value="Working part-time">Working part-time</button>
-          <button type="button" class="chip chip-multi" data-value="Other" data-other-toggle="true">Other</button>
+        <div class="q-label">Are you currently:</div>
+        <div class="chip-grid" data-key="currentStatus" data-required="true">
+          <button type="button" class="chip" data-value="Full-time student">Full-time student</button>
+          <button type="button" class="chip" data-value="Part-time student">Part-time student</button>
+          <button type="button" class="chip" data-value="Working full-time">Working full-time</button>
+          <button type="button" class="chip" data-value="Working part-time">Working part-time</button>
+          <button type="button" class="chip" data-value="Other" data-other-toggle="true">Other</button>
         </div>
         <div class="other-reveal" data-other-for="currentStatus">
           <input type="text" id="currentStatus-other" placeholder="Please specify">
@@ -342,7 +342,7 @@
           your Turnstile widget (Cloudflare dashboard → Turnstile → Add site).
           Use a "Managed" widget for the least-friction experience.
         -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAD4lcQGNbFQsMwCk" data-theme="light"></div>
+        <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-theme="light"></div>
       </div>
       <div class="error-msg" data-error-for="captcha" style="text-align:center;margin-bottom:8px;"></div>
       <div class="app-submit-row" style="justify-content:center;">
