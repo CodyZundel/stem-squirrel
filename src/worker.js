@@ -7,6 +7,7 @@
 
 import { handleApply } from './apply.js';
 import { handleSubscribe } from './subscribe.js';
+import { handleClientIntake } from './client-intake.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -20,6 +21,11 @@ export default {
     if (url.pathname === '/api/subscribe') {
       if (request.method !== 'POST') return methodNotAllowed();
       return handleSubscribe(request, env);
+    }
+
+    if (url.pathname === '/api/client-intake') {
+      if (request.method !== 'POST') return methodNotAllowed();
+      return handleClientIntake(request, env);
     }
 
     return new Response(JSON.stringify({ error: 'Not found' }), {
