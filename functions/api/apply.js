@@ -153,7 +153,7 @@ function renderEmailHtml(d){
     sectionHeader('Current Situation') +
     row('Resources in use', list(d.resources)) +
     row('Study hours/week', d.studyHours) +
-    row('Current status', d.currentStatus) +
+    row('Current status', list(d.currentStatus)) +
     row('Prior tutor/course experience', d.priorHelp) +
 
     sectionHeader('Self-Assessment') +
