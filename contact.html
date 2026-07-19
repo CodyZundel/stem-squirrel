@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | StemSquirrel MCAT Tutoring</title>
-<meta name="description" content="Get in touch about 1:1 MCAT tutoring — text, call, or send a message.">
+<title>Contact | STEM Squirrel MCAT Tutoring</title>
+<meta name="description" content="Get in touch about 1:1 MCAT tutoring.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,9 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">SS</span>StemSquirrel</a>
+    <a class="brand" href="index.html"><span class="brand-mark">SS</span>STEM Squirrel</a>
     <nav class="site-nav">
       <div class="nav-links">
-        <a href="index.html#how-it-works">How it works</a>
         <a href="contact.html">Contact</a>
       </div>
       <a class="btn btn-gold" href="application.html">Apply now</a>
@@ -29,68 +28,52 @@
 <main class="wrap">
   <section class="contact-hero">
     <h1>Questions before you commit? Let's talk.</h1>
-    <p class="sub">The fastest way to reach me is a text — I respond personally, usually same day.</p>
+    <p class="sub">Send a message and I'll get back to you personally, usually same day.</p>
   </section>
 
-  <div class="contact-direct">
-    <div>
-      <div class="num-lab">Text or call</div>
-      <div class="num">(435) 730-0050</div>
-    </div>
-    <div class="actions">
-      <a class="btn btn-gold" href="sms:+14357300050">Text me</a>
-      <a class="btn btn-outline-light" href="tel:+14357300050">Call me</a>
-    </div>
-  </div>
+  <div class="app-error-banner" id="contact-error-banner"></div>
 
-  <div class="contact-divider">or send a message</div>
-
-  <form class="contact-form" id="contact-form">
+  <form class="contact-form" id="contact-form" novalidate>
     <div class="field">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your name" required>
+      <div class="error-msg" data-error-for="name"></div>
     </div>
     <div class="field">
       <label for="email">Email</label>
       <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <div class="error-msg" data-error-for="email"></div>
     </div>
     <div class="field">
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" placeholder="What's your target score, test date, or biggest sticking point?" required></textarea>
+      <div class="error-msg" data-error-for="message"></div>
     </div>
-    <!--
-      This form does not send anywhere yet — there's no backend wired up.
-      Two easy ways to fix that:
-        1. A Cloudflare Pages Function (same pattern as functions/api/subscribe.js)
-           that forwards submissions to your email via a transactional email API.
-        2. A third-party form service like Formspree — swap this form's `action`
-           to their endpoint and it works with zero backend code.
-      Until then, submitting shows a message pointing people to text/call instead.
-    -->
-    <button type="submit" class="btn btn-dark">Send message</button>
+    <button type="submit" class="btn btn-dark" id="contact-submit-btn">Send message</button>
     <p class="contact-form-note" id="contact-form-note"></p>
   </form>
+
+  <div class="app-success" id="contact-success">
+    <div class="check">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h2>Message sent.</h2>
+    <p>Thanks for reaching out — I'll get back to you personally, usually same day.</p>
+  </div>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="brand-mark">SS</span>StemSquirrel</a>
+    <a class="brand" href="index.html"><span class="brand-mark">SS</span>STEM Squirrel</a>
     <div class="footer-links">
-      <a href="index.html#how-it-works">How it works</a>
       <a href="application.html">Apply now</a>
       <a href="join-list.html">Join the list</a>
     </div>
-    <div class="footer-fine">© 2026 StemSquirrel</div>
+    <div class="footer-fine">© 2026 STEM Squirrel</div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('contact-form-note').textContent =
-      "This form isn't wired to a backend yet — for a real reply right now, text or call (435) 730-0050 above.";
-  });
-</script>
+<script src="js/contact.js"></script>
 </body>
 </html>
