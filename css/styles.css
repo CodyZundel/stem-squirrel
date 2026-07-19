@@ -837,3 +837,139 @@ input[type="range"]{
   margin-bottom: 24px;
   display: inline-block;
 }
+
+/* ============================================================
+   Centered hero / CTA variants (no side image)
+   ============================================================ */
+.hero.centered .wrap{
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.hero.centered .hero-copy{ max-width: 640px; }
+.hero.centered h1{ margin-left: auto; margin-right: auto; }
+.hero.centered .sub{ margin-left: auto; margin-right: auto; }
+.hero.centered .hero-actions{ justify-content: center; }
+
+.cta-band.centered .wrap{
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.cta-band.centered .cta-copy{ max-width: 640px; }
+.cta-band.centered .cta-copy p{ margin-left: auto; margin-right: auto; }
+.cta-band.centered .hero-actions{ justify-content: center; }
+
+/* ============================================================
+   Vertical system timeline
+   ============================================================ */
+.system-section .wrap{ max-width: 720px; text-align: center; }
+.system-steps{ margin-top: 12px; }
+.system-step{
+  position: relative;
+  padding: 0 0 52px;
+}
+.system-step:last-child{ padding-bottom: 0; }
+.system-step:not(:last-child)::before{
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - 48px);
+  background: var(--line);
+}
+.system-step .step-num{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+  z-index: 1;
+}
+.system-step h3{ font-size: 19px; margin-bottom: 8px; }
+.system-step p{
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  max-width: 46ch;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Testimonials
+   ============================================================ */
+.testimonial-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.testimonial-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 26px;
+  text-align: left;
+}
+.testimonial-card blockquote{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0 0 16px;
+  color: var(--ink);
+}
+.testimonial-card .attr{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============================================================
+   FAQ accordion
+   ============================================================ */
+.faq-list{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq-item{
+  border-bottom: 1px solid var(--line);
+}
+.faq-item summary{
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 4px;
+  font-weight: 600;
+  font-size: 15.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: var(--ink);
+}
+.faq-item summary::-webkit-details-marker{ display: none; }
+.faq-item summary::after{
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--gold-deep);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after{ transform: rotate(45deg); }
+.faq-item .faq-answer{
+  margin: 0 4px 20px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
