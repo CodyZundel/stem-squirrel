@@ -870,16 +870,6 @@ input[type="range"]{
   padding: 0 0 52px;
 }
 .system-step:last-child{ padding-bottom: 0; }
-.system-step:not(:last-child)::before{
-  content: "";
-  position: absolute;
-  top: 48px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 48px);
-  background: var(--line);
-}
 .system-step .step-num{
   width: 46px;
   height: 46px;
