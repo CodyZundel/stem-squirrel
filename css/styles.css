@@ -309,6 +309,13 @@ h1, h2, h3{
 .cta-media{ flex: 1 1 260px; }
 .cta-band .img-placeholder{ min-height: 180px; }
 
+@media (max-width: 640px){
+  .cta-band{ padding: 36px 0; }
+  .cta-band .wrap{ gap: 20px; }
+  .cta-copy h2{ font-size: 22px; }
+  .cta-copy p{ font-size: 14px; margin-bottom: 16px; }
+}
+
 /* ============================================================
    Booking flow (schedule.html)
    ============================================================ */
