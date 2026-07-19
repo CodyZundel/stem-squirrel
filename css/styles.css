@@ -299,7 +299,7 @@ h1, h2, h3{
 }
 .cta-band .wrap{
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
   flex-wrap: wrap;
 }
